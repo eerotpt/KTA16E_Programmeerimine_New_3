@@ -10,7 +10,7 @@ namespace DiceRoller
     {
         public int Sides { get; }
         public string Description { get; }
-        private Random Random { get; } = new Random();
+        private static Random Random { get; } = new Random();
 
         private Dice(int sides, string description)
         {
@@ -23,7 +23,7 @@ namespace DiceRoller
 
         public int Roll()
         {
-            return this.Random.Next(1, this.Sides + 1);
+            return Dice.Random.Next(1, this.Sides + 1);
         }
     }
 }
